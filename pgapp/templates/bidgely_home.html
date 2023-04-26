@@ -1,0 +1,14 @@
+{% if user %}
+<style>pre{white-space:wrap}</style>
+<div>Logged in as <strong>{{user.username}}</strong> (<a href="{{ url_for('.logout') }}">Log Out</a>)</div>
+
+<pre>
+  <strong>User Logged into home page</strong>
+  <strong>User  : </strong>{{ user.username }}
+  <strong>Token : </strong>{{ user.token }}
+</pre>
+<hr>
+
+{% else %}
+Sorry, could not authorize you!
+{% endif %}
